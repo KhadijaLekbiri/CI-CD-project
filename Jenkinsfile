@@ -8,13 +8,13 @@ pipeline {
     //     maven 'maven'
     // }
 
-    environment {
-        // ----- SonarCloud -----
-        ORG          = 'KhadijaLekbiri'                
-        PROJECT_KEY  = 'KhadijaLekbiri_CI-CD-project'  
-        SONAR_TOKEN  = credentials('SONAR_TOKEN3')      
-        MAVEN_OPTS   = '-Xmx1024m'
-    }
+    // environment {
+    //     // ----- SonarCloud -----
+    //     ORG          = 'KhadijaLekbiri'                
+    //     PROJECT_KEY  = 'KhadijaLekbiri_CI-CD-project'  
+    //     SONAR_TOKEN  = credentials('SONAR_TOKEN3')      
+    //     MAVEN_OPTS   = '-Xmx1024m'
+    // }
 
     stages {
 
