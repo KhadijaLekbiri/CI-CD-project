@@ -3,10 +3,10 @@
 pipeline {
     agent any
 
-    tools {
-        jdk   'jdk17'
-        maven 'maven'
-    }
+    // tools {
+    //     jdk   'jdk17'
+    //     maven 'maven'
+    // }
 
     environment {
         // ----- SonarCloud -----
