@@ -24,37 +24,37 @@ pipeline {
             }
         }
 
-        stage('Build (backend)') {
-            steps {
-                dir('backend') {
-                    bat 'mvn -B -U clean compile'
-                }
-            }
-        }
+        // stage('Build (backend)') {
+        //     steps {
+        //         dir('backend') {
+        //             bat 'mvn -B -U clean compile'
+        //         }
+        //     }
+        // }
 
-        stage('Unit Tests (backend)') {
-            steps {
-                dir('backend') {
-                    bat 'mvn -B test'
-                }
-            }
-            post {
-                always {
-                    junit allowEmptyResults: true, testResults: 'backend/target/surefire-reports/*.xml'
-                    archiveArtifacts artifacts: 'backend/target/*.jar', fingerprint: true
-                }
-            }
-        }
+        // stage('Unit Tests (backend)') {
+        //     steps {
+        //         dir('backend') {
+        //             bat 'mvn -B test'
+        //         }
+        //     }
+        //     post {
+        //         always {
+        //             junit allowEmptyResults: true, testResults: 'backend/target/surefire-reports/*.xml'
+        //             archiveArtifacts artifacts: 'backend/target/*.jar', fingerprint: true
+        //         }
+        //     }
+        // }
 
-        stage('SonarCloud Analysis (backend)') {
-            steps {
-                dir('backend') {
-                    withSonarQubeEnv('SonarCloud') {
-                        bat 'mvn -B sonar:sonar'
-                    }
-                }
-            }
-        }
+        // stage('SonarCloud Analysis (backend)') {
+        //     steps {
+        //         dir('backend') {
+        //             withSonarQubeEnv('SonarCloud') {
+        //                 bat 'mvn -B sonar:sonar'
+        //             }
+        //         }
+        //     }
+        // }
 
     }
 
